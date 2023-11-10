@@ -2,18 +2,22 @@
 import 'package:flutter/cupertino.dart';
 
 class TextWidget extends StatelessWidget {
-  String? tybe;
+  String? type;
   Color?textcolor;
   double? fontSize;
-   TextWidget({super.key,this.fontSize,this.textcolor,this.tybe});
+  String? fontfamily;
+   TextWidget({super.key,this.fontSize,this.textcolor,this.type,this.fontfamily});
 
 
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      "$tybe",
+
+      "$type",
           style: TextStyle(
+            fontFamily: fontfamily,
+            fontWeight: FontWeight.w500,
             color: textcolor,
         fontSize: fontSize,
     ),

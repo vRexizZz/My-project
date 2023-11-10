@@ -12,33 +12,29 @@ class ScreenProuductList extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: const Text(
-          "Route",
-          style: TextStyle(
-            color: Color(0xff004182),
-          ),
-        ),
+        title: Image.asset("assets/images/Group 5 (1).png"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                CaustomTextFormField(),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                      Icons.shopping_bag_outlined),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Expanded(child: CardWidget())
-          ],
-        ),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  CaustomTextFormField(),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                        Icons.shopping_bag_outlined),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Expanded(child: CardWidget())
+            ],
+          ),
+
       ),
     );
   }

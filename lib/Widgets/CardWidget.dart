@@ -8,11 +8,12 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  GridView.builder(
+      physics: BouncingScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 116 / 185,
+            childAspectRatio: 0.6,
           ),
-          itemCount: 20,
+          itemCount: 10,
           itemBuilder: (BuildContext context, int index) {
             return const ProductWidget();
           },
