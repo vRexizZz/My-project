@@ -8,7 +8,7 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  GridView.builder(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 0.6,

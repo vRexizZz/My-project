@@ -55,7 +55,7 @@ class ProductWidget extends StatelessWidget {
               ],
             ),
             Container(
-              padding: EdgeInsetsDirectional.all(5),
+              padding: const EdgeInsetsDirectional.all(5),
               child: Column(
                 children: [
                   const Text(

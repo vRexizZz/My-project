@@ -31,7 +31,7 @@ class ScreenProuductList extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Expanded(child: CardWidget())
+              const Expanded(child: CardWidget())
             ],
           ),
 
