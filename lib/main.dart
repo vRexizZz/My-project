@@ -14,7 +14,8 @@ class ProductList extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return const MaterialApp(
+    return  MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: ScreenProuductList(),
 
     );
