@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:prouductlist/Widgets/prouductwidget.dart';
 
 class CardWidget extends StatelessWidget {
-  const CardWidget({Key? key}) : super(key: key);
+   CardWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
     return  GridView.builder(
       physics: const BouncingScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -15,7 +16,7 @@ class CardWidget extends StatelessWidget {
           ),
           itemCount: 10,
           itemBuilder: (BuildContext context, int index) {
-            return const ProductWidget();
+            return  ProductWidget();
           },
     );
   }

@@ -3,9 +3,16 @@ import 'package:flutter/material.dart';
 import '../Widgets/CardWidget.dart';
 import '../Widgets/Customtextfield.dart';
 
-class ScreenProuductList extends StatelessWidget {
-  const ScreenProuductList({super.key});
+class ScreenProuductList extends StatefulWidget {
+  ScreenProuductList({super.key});
 
+  int? itemcard;
+
+  @override
+  State<ScreenProuductList> createState() => _ScreenProuductListState();
+}
+
+class _ScreenProuductListState extends State<ScreenProuductList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,25 +23,41 @@ class ScreenProuductList extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  CaustomTextFormField(),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                        Icons.shopping_bag_outlined),
-                  ),
-                ],
+        child: Column(
+          children: [
+            Row(
+              children: [
+                CaustomTextFormField(),
+                Stack(
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.shopping_cart_outlined,
+                        size: 30,
+                        color: Color(0xff005aaf),
+                      ),
+                    ),
+                    const Positioned(
+                      left: 25,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.red,
+                        radius: 11,
+                        child: Text("0"),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Expanded(
+              child: CardWidget(),
               ),
-              const SizedBox(
-                height: 10,
-              ),
-              const Expanded(child: CardWidget())
-            ],
-          ),
-
+          ],
+        ),
       ),
     );
   }

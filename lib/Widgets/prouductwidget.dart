@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
 import '../model/Model category.dart';
+import 'Buttonwidget.dart';
 import 'TextWidget.dart';
 
-class ProductWidget extends StatelessWidget {
-  const ProductWidget({
-    super.key,
-    this.data,
-  });
+class ProductWidget extends StatefulWidget {
+   ProductWidget({super.key, this.data});
 
   final ModelCategory? data;
+  @override
+  State<ProductWidget> createState() => _ProductWidgetState();
+}
+
+class _ProductWidgetState extends State<ProductWidget> {
+  bool favimage = false;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 5, bottom: 10, left: 5, right: 5),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          border: Border.all(width: 1, color: const Color(0xff004182))),
+        borderRadius: BorderRadius.circular(15),
+        border: Border.all(
+          width: 1,
+          color: const Color(0xff004182),
+        ),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(0.0),
         child: Column(
@@ -44,14 +52,17 @@ class ProductWidget extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional.topEnd,
-                  child: IconButton(
-                    padding: EdgeInsets.zero,
-                    onPressed: () {},
-                    icon: const Icon(Icons.favorite_outline),
-                    color: Colors.blue,
-                  ),
-                )
+                    alignment: AlignmentDirectional.topEnd,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          favimage = !favimage;
+                        });
+                      },
+                      child: Image.asset(favimage
+                          ? "assets/images/Group 11.png"
+                          : "assets/images/Group 17.png"),
+                    ))
               ],
             ),
             Container(
@@ -63,9 +74,10 @@ class ProductWidget extends StatelessWidget {
 Nike shoes flexible for wo..""",
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(color: Color(0xff004182),
-                    fontSize: 13,
-                    fontFamily: "poppins"),
+                    style: TextStyle(
+                        color: Color(0xff004182),
+                        fontSize: 13,
+                        fontFamily: "poppins"),
                   ),
                   const SizedBox(
                     height: 10,
@@ -80,10 +92,9 @@ Nike shoes flexible for wo..""",
                         textcolor: const Color(0xff004182),
                       ),
                       const Text(
-
                         "2000 EGP",
                         style: TextStyle(
-                          fontFamily: "Poppins",
+                            fontFamily: "Poppins",
                             color: Colors.blue,
                             fontSize: 11,
                             decoration: TextDecoration.lineThrough),
@@ -98,19 +109,10 @@ Nike shoes flexible for wo..""",
                         fontSize: 12,
                         type: "Review",
                         fontfamily: "Poppins",
-
                       ),
                       const Text("(4.6)"),
-                      IconButton(
-                        iconSize: 30,
-                        splashRadius: 20,
-                        padding: EdgeInsetsDirectional.zero,
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.add_circle_sharp,
-                          color: Color(0xff004182),
-                        ),
-                      )
+                      Buttonaddtobag(),
+
                     ],
                   ),
                 ],
