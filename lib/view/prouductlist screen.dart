@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:prouductlist/manager/cart_cunbit_cubit.dart';
 
 import '../Widgets/CardWidget.dart';
 import '../Widgets/Customtextfield.dart';
 
 class ScreenProuductList extends StatefulWidget {
   ScreenProuductList({super.key});
-
-  int? itemcard;
 
   @override
   State<ScreenProuductList> createState() => _ScreenProuductListState();
@@ -17,9 +17,13 @@ class _ScreenProuductListState extends State<ScreenProuductList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         elevation: 0,
-        backgroundColor: Colors.transparent,
-        title: Image.asset("assets/images/Group 5 (1).png"),
+        backgroundColor: Colors.white,
+        title: Image.network("https://images.wuzzuf-data.net/files/company_logo/Bavaria-Egypt-Egypt-29995-1612179858-og.png"
+        ,
+        height: 80,
+        width: 135,),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -38,12 +42,16 @@ class _ScreenProuductListState extends State<ScreenProuductList> {
                         color: Color(0xff005aaf),
                       ),
                     ),
-                    const Positioned(
+                    Positioned(
                       left: 25,
-                      child: CircleAvatar(
-                        backgroundColor: Colors.red,
-                        radius: 11,
-                        child: Text("0"),
+                      child: BlocBuilder<CartCubit, int>(
+                        builder: (context, state) {
+                          return CircleAvatar(
+                            backgroundColor: Colors.red,
+                            radius: 11,
+                            child: Text('$state'),
+                          );
+                        },
                       ),
                     )
                   ],
@@ -55,7 +63,7 @@ class _ScreenProuductListState extends State<ScreenProuductList> {
             ),
             Expanded(
               child: CardWidget(),
-              ),
+            ),
           ],
         ),
       ),

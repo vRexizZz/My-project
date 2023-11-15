@@ -1,19 +1,31 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../manager/cart_cunbit_cubit.dart';
 
 class Buttonaddtobag extends StatelessWidget {
-   Buttonaddtobag({super.key});
+  Buttonaddtobag({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  IconButton(
-      iconSize: 30,
-      splashRadius: 20,
-      padding: EdgeInsetsDirectional.zero,
-      icon: const Icon(
-        Icons.add_circle_sharp,
-        color: Color(0xff004182),
-      ), onPressed: () {  },
+    return Container(
+      width: 125,
+      height: 40,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: MaterialButton(
+        color: Colors.red,
+        child: const Text("Add To Cart",
+        style: TextStyle(
+          fontSize: 15,
+          fontFamily: "poppins",
+          color: Colors.white
+        ),),
+        onPressed: () {
+          context.read<CartCubit>().addItemToCart();
+        },
+      ),
     );
   }
 }
