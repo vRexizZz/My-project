@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import '../model/Model category.dart';
 import 'Buttonwidget.dart';
 import 'TextWidget.dart';
@@ -17,50 +18,33 @@ class _ProductWidgetState extends State<ProductWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsetsDirectional.symmetric(vertical: 8,horizontal: 5),
       elevation: 5,
-      child: Container(
-        margin: const EdgeInsets.only(top: 20, bottom: 10, left: 5, right: 5),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Stack(
-              children: [
-                ClipRRect(
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  child: Image.network(
-                    widget.data.image,
-                    width: 200,
-                    height: 190,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Positioned(
-                  top: -10,
-                  left: 113,
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(
-                        () {
-                          favimage = !favimage;
-                        },
-                      );
-                    },
-                    child: Image.asset(favimage
-                        ? "assets/images/Group 11.png"
-                        : "assets/images/Group 17.png"),
-                  ),
-                )
-              ],
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsetsDirectional.only(top: 0),
+            child: Image.network(
+              widget.data.image,
+              width: 200,
+              height: 180,
+              fit: BoxFit.cover,
             ),
-            const SizedBox(height: 10,),
-            Container(
-              padding: const EdgeInsetsDirectional.all(5),
+          ),
+          SizedBox(height: 10,child: Container(
+            color: Colors.white,
+          ),),
+          Divider(
+            height: 0,
+            thickness: 1.2,
+            endIndent: 10,
+            indent: 10,
+            color: Colors.black,
+          ),
+
+          Expanded(
+            child: Container(
+              color: Colors.white,
+              padding: const EdgeInsetsDirectional.all(8),
               child: Column(
                 children: [
                   Text(
@@ -82,7 +66,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                         fontSize: 18,
                         type: "EGP 1200",
                         fontfamily: "Poppins",
-                        textcolor:  Colors.black,
+                        textcolor: Colors.black,
                       ),
                       const Text(
                         "2000 EGP",
@@ -96,18 +80,17 @@ class _ProductWidgetState extends State<ProductWidget> {
                   ),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-
-
-                    ],
+                    children: [],
                   ),
-                  const SizedBox(height: 15,),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   Buttonaddtobag(),
                 ],
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

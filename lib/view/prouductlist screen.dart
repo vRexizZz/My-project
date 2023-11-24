@@ -16,14 +16,14 @@ class _ScreenProuductListState extends State<ScreenProuductList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfffaf8f8),
       appBar: AppBar(
-
         elevation: 0,
-        backgroundColor: Colors.white,
-        title: Image.network("https://images.wuzzuf-data.net/files/company_logo/Bavaria-Egypt-Egypt-29995-1612179858-og.png"
-        ,
-        height: 80,
-        width: 135,),
+        title: Image.network(
+          "https://images.wuzzuf-data.net/files/company_logo/Bavaria-Egypt-Egypt-29995-1612179858-og.png",
+          height: 85,
+          width: 150,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -39,7 +39,7 @@ class _ScreenProuductListState extends State<ScreenProuductList> {
                       icon: const Icon(
                         Icons.shopping_cart_outlined,
                         size: 30,
-                        color: Color(0xff005aaf),
+                        color: Colors.black,
                       ),
                     ),
                     Positioned(
@@ -49,7 +49,13 @@ class _ScreenProuductListState extends State<ScreenProuductList> {
                           return CircleAvatar(
                             backgroundColor: Colors.red,
                             radius: 11,
-                            child: Text('$state'),
+                            child: Text(
+                              '$state',
+                              style: const TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
                           );
                         },
                       ),
@@ -67,6 +73,7 @@ class _ScreenProuductListState extends State<ScreenProuductList> {
           ],
         ),
       ),
+
     );
   }
 }

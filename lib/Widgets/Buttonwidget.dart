@@ -11,17 +11,16 @@ class Buttonaddtobag extends StatelessWidget {
       width: 125,
       height: 40,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(25),
       ),
       clipBehavior: Clip.antiAlias,
       child: MaterialButton(
         color: Colors.red,
-        child: const Text("Add To Cart",
-        style: TextStyle(
-          fontSize: 15,
-          fontFamily: "poppins",
-          color: Colors.white
-        ),),
+        child: const Text(
+          "Add To Cart",
+          style: TextStyle(
+              fontSize: 15, fontFamily: "poppins", color: Colors.white),
+        ),
         onPressed: () {
           context.read<CartCubit>().addItemToCart();
         },
