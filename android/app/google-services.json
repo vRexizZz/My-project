@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "278780970997",
+    "project_id": "bavaria-firebase",
+    "storage_bucket": "bavaria-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278780970997:android:cc8c6c7f1cf0d772ad02bc",
+        "android_client_info": {
+          "package_name": "com.example.bavaria"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUeC67iXSHfK3t0ING0wjpKXnfw_cUS1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278780970997:android:0903825d0275a9e4ad02bc",
+        "android_client_info": {
+          "package_name": "com.example.prouductlist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUeC67iXSHfK3t0ING0wjpKXnfw_cUS1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
