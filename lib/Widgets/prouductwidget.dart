@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import '../model/Model category.dart';
 import 'Buttonwidget.dart';
 import 'TextWidget.dart';
 
 class ProductWidget extends StatefulWidget {
-  ProductWidget({super.key, required this.data});
+  const ProductWidget({super.key, required this.data});
 
   @override
   State<ProductWidget> createState() => _ProductWidgetState();
@@ -33,7 +32,7 @@ class _ProductWidgetState extends State<ProductWidget> {
           SizedBox(height: 10,child: Container(
             color: Colors.white,
           ),),
-          Divider(
+          const Divider(
             height: 0,
             thickness: 1.2,
             endIndent: 10,
