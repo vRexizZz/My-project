@@ -8,33 +8,10 @@ class CarouselSliderMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 260,
+      height: 185,
       child: CarouselSlider(
         items: [
-          Stack(
-            children: [
-              SizedBox(
-                height: double.infinity,
-                child: Image.asset(
-                  "assets/images/pexels-daria-obymaha-1684032.jpg",
-                  fit: BoxFit.fill,
-                  height: double.infinity,
-                  width: double.infinity,
-                ),
-              ),
-              Container(
-                color: Colors.black38,
-                child: Center(
-                  child: TextWidget(
-                    type: "Kitchen",
-                    textcolor: Colors.white,
-                    fontSize: 22,
-                    fontfamily: "Poppins",
-                  ),
-                ),
-              )
-            ],
-          ),
+
           Stack(
             children: [
               Container(
@@ -64,24 +41,20 @@ class CarouselSliderMenu extends StatelessWidget {
           ),
           Stack(
             children: [
-              Container(
+              SizedBox(
                 height: double.infinity,
-                color: Colors.white24,
                 child: Image.asset(
-                  "assets/images/pexels-photo-2775231.jpeg",
+                  "assets/images/pexels-daria-obymaha-1684032.jpg",
                   fit: BoxFit.fill,
                   height: double.infinity,
                   width: double.infinity,
                 ),
               ),
-              // Container(
-              //   color: Colors.black26,
-              // ),
               Container(
                 color: Colors.black38,
                 child: Center(
                   child: TextWidget(
-                    type: "Camper",
+                    type: "Kitchen",
                     textcolor: Colors.white,
                     fontSize: 22,
                     fontfamily: "Poppins",
@@ -158,9 +131,6 @@ class CarouselSliderMenu extends StatelessWidget {
                   width: double.infinity,
                 ),
               ),
-              // Container(
-              //   color: Colors.black26,
-              // ),
               Container(
                 color: Colors.black38,
                 child: Center(
@@ -174,16 +144,47 @@ class CarouselSliderMenu extends StatelessWidget {
               )
             ],
           ),
+          Stack(
+            children: [
+              Container(
+                height: double.infinity,
+                color: Colors.white24,
+                child: Image.asset(
+                  "assets/images/pexels-photo-2775231.jpeg",
+                  fit: BoxFit.fill,
+                  height: double.infinity,
+                  width: double.infinity,
+                ),
+              ),
+              // Container(
+              //   color: Colors.black26,
+              // ),
+              Container(
+                color: Colors.black38,
+                child: Center(
+                  child: TextWidget(
+                    type: "Camper",
+                    textcolor: Colors.white,
+                    fontSize: 22,
+                    fontfamily: "Poppins",
+                  ),
+                ),
+              )
+            ],
+          ),
+
         ],
         options: CarouselOptions(
             autoPlay: true,
             aspectRatio: 1.1,
             enlargeCenterPage: true,
             enableInfiniteScroll: true,
-            viewportFraction: 0.62
-            ),
+            viewportFraction: 0.62,
+          initialPage: 0,
+          autoPlayCurve: Curves.linear,
+          autoPlayAnimationDuration: Duration(seconds: 1)
+        ),
       ),
     );
   }
 }
-//assets/images/4556d449-b3bf-4c24-9e48-17c49b002c9f.gif

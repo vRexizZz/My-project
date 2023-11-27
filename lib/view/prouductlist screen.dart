@@ -18,6 +18,8 @@ class _ScreenProuductListState extends State<ScreenProuductList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 3,
+        backgroundColor: Colors.white30.withOpacity(1.0),
         title: Image.asset(
           "assets/images/Bavaria-Egypt-Egypt-29995-1612179858-og-removebg-preview.png",
           height: 85,

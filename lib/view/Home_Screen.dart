@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_page_view_indicator/flutter_page_view_indicator.dart';
 import 'package:gap/gap.dart';
 
+import '../Widgets/GridView_offers.dart';
 import '../Widgets/Menu_Preventive_Fire_.dart';
+import '../Widgets/Offers_Widget.dart';
 import '../Widgets/TextWidget.dart';
 import '../model/modelPhotos.dart';
 import '../Widgets/screenspage.dart';
@@ -74,16 +76,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white.withOpacity(1),
         title: Image.asset(
           "assets/images/Bavaria-Egypt-Egypt-29995-1612179858-og-removebg-preview.png",
           fit: BoxFit.cover,
           height: 85,
           width: 145,
         ),
-        elevation: 0,
+        elevation: 3,
       ),
       body: ListView(
-        physics: const BouncingScrollPhysics(),
         children: [
           SizedBox(
             width: double.infinity,
@@ -121,25 +123,67 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const Gap(30),
-          Padding(
-            padding: const EdgeInsets.only(left: 8, right: 8),
-            child: TextWidget(
-              type: "Preventive Fire Protection",
-              fontSize: 21,
+          Container(
+            color: const Color(0xffD90429),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextWidget(
+                    type: "Preventive Fire Protection",
+                    fontSize: 18.5,
+                    textcolor: Colors.white,
+                  ),
+                  IconButton(onPressed: (){},
+                      color: Colors.white,
+                      iconSize: 32,
+                      highlightColor: Colors.transparent,
+                      icon: const Icon(Icons.arrow_circle_right_rounded))
+                ],
+              ),
             ),
           ),
-          const Gap(10),
+          const Gap(2),
           Container(
-            color: Colors.black12,
+            color: Colors.black26,
             child: const Padding(
               padding: EdgeInsets.only(top: 25, bottom: 25),
               child: CarouselSliderMenu(),
             ),
           ),
           const Gap(10),
+          Padding(
+            padding: const EdgeInsets.only( left: 10.0,
+            right: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextWidget(
+                  type: "Anniversary offers",
+                  fontSize: 18,
+                ),
+                const Text("View All",
+                style: TextStyle(
+                  color: Colors.black45
+                ),)
+              ],
+            ),
+          ),
+          const Gap(10),
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: GridViewOffers(),
+          ),
+
+          const Gap(00),
+          Container(
+            width: 500,
+            height: 500,
+            color: Colors.red,
+          )
         ],
       ),
-      drawer: Drawer(),
     );
   }
 }
