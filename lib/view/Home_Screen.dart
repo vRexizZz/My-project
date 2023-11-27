@@ -1,19 +1,15 @@
-import 'dart:async';
 import 'package:animate_do/animate_do.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_page_view_indicator/flutter_page_view_indicator.dart';
 import 'package:gap/gap.dart';
-
 import '../Widgets/GridView_offers.dart';
 import '../Widgets/Menu_Preventive_Fire_.dart';
-import '../Widgets/Offers_Widget.dart';
 import '../Widgets/TextWidget.dart';
 import '../model/modelPhotos.dart';
 import '../Widgets/screenspage.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -177,11 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           const Gap(00),
-          Container(
-            width: 500,
-            height: 500,
-            color: Colors.red,
-          )
+
         ],
       ),
     );

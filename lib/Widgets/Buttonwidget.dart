@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../manager/cart_cunbit_cubit.dart';
 
 class Buttonaddtobag extends StatelessWidget {
-  Buttonaddtobag({super.key});
+  const Buttonaddtobag({super.key});
 
   @override
   Widget build(BuildContext context) {

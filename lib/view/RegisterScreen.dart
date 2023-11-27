@@ -5,7 +5,6 @@ import 'LoginScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
 
@@ -44,13 +43,14 @@ class RegisterScreen extends StatelessWidget {
                       height: 100,
                     ),
                     const Center(
-                        child: Text(
-                      "Fire Fighting Solutions",
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: "opensans"),
-                    )),
+                      child: Text(
+                        "Fire Fighting Solutions",
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: "opensans"),
+                      ),
+                    ),
                     const SizedBox(
                       height: 15,
                     ),
@@ -108,13 +108,13 @@ class RegisterScreen extends StatelessWidget {
                                   if (formkey.currentState!.validate()) {
                                     try {
                                       await checkFirebase();
-                                      showSnackbar(context,"Sucsecc");
+                                      showSnackbar(context, "Sucsecc");
                                     } on FirebaseAuthException catch (e) {
                                       if (e.code == 'weak-password') {
                                         showSnackbar(context, "week password");
                                       } else if (e.code ==
                                           'email-already-in-use') {
-                                         showSnackbar(
+                                        showSnackbar(
                                             context, "email Already in use");
                                       }
                                     } catch (e) {
@@ -170,6 +170,7 @@ class RegisterScreen extends StatelessWidget {
       ),
     );
   }
+
   Future<void> checkFirebase() async {
     UserCredential userCredential = await FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email!, password: password!);

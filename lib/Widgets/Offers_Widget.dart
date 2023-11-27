@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:prouductlist/Widgets/TextWidget.dart';
-
 import '../model/Offers_Model.dart';
 
 class OffersWidget extends StatelessWidget {
@@ -28,7 +26,7 @@ class OffersWidget extends StatelessWidget {
               child: Text(
 
                 data.headtext,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 15
@@ -39,7 +37,7 @@ class OffersWidget extends StatelessWidget {
                data.descrption,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 13
               ),
 
@@ -50,12 +48,12 @@ class OffersWidget extends StatelessWidget {
                 TextWidget(
                   fontSize: 16,
                   type: "EGP ${data.Price} ",
-                  textcolor: Color(0xffAE0F30),
+                  textcolor: const Color(0xffAE0F30),
                   fontfamily: "Poppins",
                 ),
                 Text(
                    "EGP ${data.oldprice}",
-                  style: TextStyle(
+                  style: const TextStyle(
                     decoration: TextDecoration.lineThrough,
                     color: Colors.black54,
                     fontSize: 13

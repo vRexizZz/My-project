@@ -6,7 +6,7 @@ import 'Offers_Widget.dart';
 class GridViewOffers extends StatelessWidget {
   GridViewOffers({super.key});
 
-  List<OffersModel> Menu = [
+  List<OffersModel> menu = [
     OffersModel(
         image: 'assets/images/27c2a24a-c41a-480b-a8ed-09dd56d3edee.gif',
         headtext: 'FANTASIA',
@@ -47,8 +47,8 @@ class GridViewOffers extends StatelessWidget {
     return SizedBox(
       height: gridHeight,
       child: GridView.builder(
-        physics: NeverScrollableScrollPhysics(),
-        itemCount: Menu.length,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: menu.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 115 / 190,
@@ -57,7 +57,7 @@ class GridViewOffers extends StatelessWidget {
         ),
         itemBuilder: (BuildContext context, int index) {
           return OffersWidget(
-            data: Menu[index],
+            data: menu[index],
           );
         },
       ),
