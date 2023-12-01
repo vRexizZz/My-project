@@ -15,7 +15,6 @@ class CarouselSliderMenu extends StatelessWidget {
           Stack(
             children: [
               Container(
-                color: Colors.white24,
                 child: Image.asset(
                   "assets/images/610099885d1b996962ee9983882820a8.jpg",
                   fit: BoxFit.fill,
@@ -67,7 +66,6 @@ class CarouselSliderMenu extends StatelessWidget {
             children: [
               Container(
                 height: double.infinity,
-                color: Colors.white24,
                 child: Image.asset(
                   "assets/images/pexels-max-rahubovskiy-6794925.jpg",
                   fit: BoxFit.fill,
@@ -95,7 +93,6 @@ class CarouselSliderMenu extends StatelessWidget {
             children: [
               Container(
                 height: double.infinity,
-                color: Colors.white24,
                 child: Image.asset(
                   "assets/images/istockphoto-1213695547-612x612.jpg",
                   fit: BoxFit.fill,
@@ -123,7 +120,6 @@ class CarouselSliderMenu extends StatelessWidget {
             children: [
               Container(
                 height: double.infinity,
-                color: Colors.white24,
                 child: Image.asset(
                   "assets/images/pexels-kindel-media-7578862.jpg",
                   fit: BoxFit.fill,
@@ -148,7 +144,6 @@ class CarouselSliderMenu extends StatelessWidget {
             children: [
               Container(
                 height: double.infinity,
-                color: Colors.white24,
                 child: Image.asset(
                   "assets/images/pexels-photo-2775231.jpeg",
                   fit: BoxFit.fill,

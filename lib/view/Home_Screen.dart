@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_page_view_indicator/flutter_page_view_indicator.dart';
 import 'package:gap/gap.dart';
 import '../Widgets/GridView_offers.dart';
+import '../Widgets/ListView_Service_Menu.dart';
 import '../Widgets/Menu_Preventive_Fire_.dart';
 import '../Widgets/TextWidget.dart';
 import '../model/modelPhotos.dart';
@@ -71,15 +72,29 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white10,
       appBar: AppBar(
+        actions: [
+          Builder(builder: (context) {
+            return IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              },
+            );
+          })
+        ],
         backgroundColor: Colors.white.withOpacity(1),
         title: Image.asset(
           "assets/images/Bavaria-Egypt-Egypt-29995-1612179858-og-removebg-preview.png",
-          fit: BoxFit.cover,
+          width: 150,
           height: 85,
-          width: 145,
         ),
         elevation: 3,
+      ),
+      endDrawer: Drawer(
+        width: 250,
+        elevation: 0,
       ),
       body: ListView(
         children: [
@@ -107,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Transform.translate(
-            offset: const Offset(0, 05),
+            offset: const Offset(0, 017),
             filterQuality: FilterQuality.high,
             child: PageViewIndicator(
               currentSize: 8,
@@ -131,7 +146,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 18.5,
                     textcolor: Colors.white,
                   ),
-                  IconButton(onPressed: (){},
+                  IconButton(
+                      onPressed: () {},
                       color: Colors.white,
                       iconSize: 32,
                       highlightColor: Colors.transparent,
@@ -142,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           const Gap(2),
           Container(
-            color: Colors.black26,
+            color: Colors.grey.shade300,
             child: const Padding(
               padding: EdgeInsets.only(top: 25, bottom: 25),
               child: CarouselSliderMenu(),
@@ -150,8 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           const Gap(10),
           Padding(
-            padding: const EdgeInsets.only( left: 10.0,
-            right: 10),
+            padding: const EdgeInsets.only(left: 10.0, right: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -159,21 +174,81 @@ class _HomeScreenState extends State<HomeScreen> {
                   type: "Anniversary offers",
                   fontSize: 18,
                 ),
-                const Text("View All",
-                style: TextStyle(
-                  color: Colors.black45
-                ),)
+                GestureDetector(
+                  child: const Text(
+                    "View All",
+                    style: TextStyle(color: Colors.black54),
+                  ),
+                )
               ],
             ),
           ),
-          const Gap(10),
+          const Gap(3),
           Padding(
             padding: const EdgeInsets.all(5.0),
             child: GridViewOffers(),
           ),
-
-          const Gap(00),
-
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              "Service",
+              style: TextStyle(
+                fontFamily: "Poppins",
+                fontSize: 20,
+              ),
+            ),
+          ),
+          SizedBox(height: 450, child: ListViewServiceMenu()),
+          const Gap(20),
+          Image.asset(
+            "assets/images/bavaria_slogan_en.jpg",
+            fit: BoxFit.fill,
+          ),
+          const Gap(20),
+          SizedBox(
+            height: 100,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const Text(
+                  "Follow us!",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                const Text(
+                  "Get news, inspiration and Much More",
+                  style: TextStyle(color: Colors.black54),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      iconSize: 35,
+                      color: Colors.blue,
+                      icon: const Icon(Icons.facebook_rounded),
+                    ),
+                    const Gap(15),
+                    IconButton(
+                      onPressed: () {},
+                      iconSize: 35,
+                      icon: Image.asset(
+                        "assets/images/youtube.png",
+                        height: 35,
+                      ),
+                    ),
+                    const Gap(15),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Image.asset(
+                        "assets/images/instagram.png",
+                        height: 35,
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
