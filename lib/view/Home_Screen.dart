@@ -2,12 +2,15 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_page_view_indicator/flutter_page_view_indicator.dart';
 import 'package:gap/gap.dart';
+import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../Widgets/GridView_offers.dart';
 import '../Widgets/ListView_Service_Menu.dart';
 import '../Widgets/Menu_Preventive_Fire_.dart';
 import '../Widgets/TextWidget.dart';
 import '../model/modelPhotos.dart';
 import '../Widgets/screenspage.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -46,6 +49,12 @@ class _HomeScreenState extends State<HomeScreen> {
   //   _timer.cancel();
   //   super.dispose();
   // }
+  Future<void> _launchURL(String Url) async {
+    final Uri uri = Uri(scheme: "https://", host: Url);
+    if (!await launchUrl(uri, mode: LaunchMode.externalNonBrowserApplication)) {
+      throw "cantopen";
+    }
+  }
 
   int currentIndex = 0;
   List<PageViewModel> screens = [
@@ -221,28 +230,53 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    IconButton(
-                      onPressed: () {},
-                      iconSize: 35,
-                      color: Colors.blue,
-                      icon: const Icon(Icons.facebook_rounded),
+                    Link(
+                      target: LinkTarget.self,
+                      uri: Uri.parse(
+                          'https://www.facebook.com/Bavariafirefightingsolutions'),
+                      builder: (BuildContext context,
+                          Future<void> Function()? followLink) {
+                        return InkWell(
+                          onTap: followLink,
+                          child: const Icon(
+                            Icons.facebook_rounded,
+                            color: Colors.blue,
+                            size: 35,
+                          ),
+                        );
+                      },
                     ),
                     const Gap(15),
-                    IconButton(
-                      onPressed: () {},
-                      iconSize: 35,
-                      icon: Image.asset(
-                        "assets/images/youtube.png",
-                        height: 35,
-                      ),
+                    Link(
+                      target: LinkTarget.self,
+                      uri: Uri.parse(
+                          'https://www.youtube.com/@bavariafirefightingsolutio925'),
+                      builder: (BuildContext context,
+                          Future<void> Function()? followLink) {
+                        return InkWell(
+                          onTap: followLink,
+                          child: Image.asset(
+                            "assets/images/youtube.png",
+                            height: 35,
+                          ),
+                        );
+                      },
                     ),
                     const Gap(15),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Image.asset(
-                        "assets/images/instagram.png",
-                        height: 35,
-                      ),
+                    Link(
+                      target: LinkTarget.self,
+                      uri: Uri.parse(
+                          'https://www.instagram.com/bavariabrandschutz/'),
+                      builder: (BuildContext context,
+                          Future<void> Function()? followLink) {
+                        return InkWell(
+                          onTap: followLink,
+                          child: Image.asset(
+                            "assets/images/instagram.png",
+                            height: 35,
+                          ),
+                        );
+                      },
                     )
                   ],
                 )
