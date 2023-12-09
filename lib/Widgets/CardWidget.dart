@@ -1,6 +1,6 @@
+import 'package:Bavaria_Fire_Fighting_Solution/Widgets/prouductwidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:prouductlist/Widgets/prouductwidget.dart';
 import '../model/Model category.dart';
 
 

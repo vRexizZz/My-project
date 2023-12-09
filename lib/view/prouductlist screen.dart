@@ -1,10 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:prouductlist/manager/cart_cunbit_cubit.dart';
-
 import '../Widgets/CardWidget.dart';
 import '../Widgets/Customtextfield.dart';
+import '../manager/cart_cunbit_cubit.dart';
 
 class ScreenProuductList extends StatefulWidget {
   ScreenProuductList({super.key});

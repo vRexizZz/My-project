@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:prouductlist/Widgets/TextWidget.dart';
 import '../model/Offers_Model.dart';
+import 'TextWidget.dart';
 
 class OffersWidget extends StatelessWidget {
   const OffersWidget({super.key, required this.data});

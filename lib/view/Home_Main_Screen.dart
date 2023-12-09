@@ -1,6 +1,7 @@
+import 'package:Bavaria_Fire_Fighting_Solution/view/prouductlist%20screen.dart';
 import 'package:flutter/material.dart';
-import 'package:prouductlist/view/prouductlist%20screen.dart';
 
+import 'Category_Screen.dart';
 import 'Home_Screen.dart';
 import 'RegisterScreen.dart';
 
@@ -17,8 +18,8 @@ class _HomeScreenState extends State<HomeMainScreen> {
   Widget build(BuildContext context) {
 
     List<Widget> screens =[
-      HomeScreen(),
-      ScreenProuductList(),
+      const HomeScreen(),
+       CategoryScreen(),
       ScreenProuductList(),
       RegisterScreen()
     ];

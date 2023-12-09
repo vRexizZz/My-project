@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:prouductlist/Widgets/TextWidget.dart';
-
 import '../model/Service_Model_Menu.dart';
+import 'TextWidget.dart';
 
 class ServiceMenuWidget extends StatelessWidget {
   const ServiceMenuWidget({super.key, required this.data});
