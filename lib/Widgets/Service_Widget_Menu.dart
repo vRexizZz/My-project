@@ -14,7 +14,7 @@ class ServiceMenuWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Card(
         color: Colors.grey.shade50,
-        elevation: 1,
+        elevation: 2,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

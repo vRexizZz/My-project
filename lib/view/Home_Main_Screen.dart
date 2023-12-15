@@ -1,9 +1,12 @@
 import 'package:Bavaria_Fire_Fighting_Solution/view/prouductlist%20screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../Widgets/testfirebase.dart';
 import 'Category_Screen.dart';
 import 'Home_Screen.dart';
 import 'RegisterScreen.dart';
+import 'afterLoagin.dart';
 
 class HomeMainScreen extends StatefulWidget {
   const HomeMainScreen({super.key});
@@ -20,8 +23,8 @@ class _HomeScreenState extends State<HomeMainScreen> {
     List<Widget> screens =[
       const HomeScreen(),
        CategoryScreen(),
-      ScreenProuductList(),
-      RegisterScreen()
+      const TestFirebase(),
+      FirebaseAuth.instance.currentUser == null ?RegisterScreen() : const ProfileWidget()
     ];
     return Scaffold(
       body: Container(
@@ -35,7 +38,7 @@ class _HomeScreenState extends State<HomeMainScreen> {
           });
 
         },
-        elevation: 1,
+        elevation: 0,
         selectedItemColor: Colors.red,
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
