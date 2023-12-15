@@ -17,6 +17,7 @@ class _ScreenProuductListState extends State<ScreenProuductList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         elevation: 3,
         backgroundColor: Colors.white30.withOpacity(1.0),
         title: Image.asset(

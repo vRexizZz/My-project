@@ -16,8 +16,17 @@ class TextFormFieldWidget extends StatelessWidget {
           return "Must be Empty";
         }
       },
+
       decoration:
-          InputDecoration(hintText: labelText,),
+          InputDecoration(
+              hintText: labelText,
+            fillColor: Colors.white,
+            hintStyle: TextStyle(
+              color: Colors.black.withOpacity(1),
+              fontFamily: "Poppins"
+            )
+
+          ),
     );
   }
 }

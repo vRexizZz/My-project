@@ -4,9 +4,11 @@ import '../helper/showsnack.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'Home_Main_Screen.dart';
+import 'afterLoagin.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
   static String id = "Login Screen";
 
@@ -16,7 +18,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   String? email, password;
-  bool  isloading= false;
+  bool isloading = false;
 
   GlobalKey<FormState> formkey = GlobalKey();
 
@@ -30,8 +32,8 @@ class _LoginScreenState extends State<LoginScreen> {
           flexibleSpace: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                  // begin: Alignment.topCenter,
-                  // end: Alignment.bottomCenter,
+                // begin: Alignment.topCenter,
+                // end: Alignment.bottomCenter,
                   colors: <Color>[Color(0xffED213A), Color(0xff93291E)]),
             ),
           ),
@@ -69,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onTap: () async {
                     if (formkey.currentState!.validate()) {
                       try {
-                        isloading=true;
+                        isloading = true;
                         setState(() {
 
                         });
@@ -77,21 +79,28 @@ class _LoginScreenState extends State<LoginScreen> {
 
                         showSnackbar(context, "successful");
                       } on FirebaseAuthException catch (e) {
-                        if (e.code == 'user-not-found') {
+                        if (e.code == 'invalid-email') {
                           showSnackbar(context, "User Not Found");
                           print(e.code);
                         } else if (e.code == 'wrong-password') {
                           showSnackbar(context, "Wrong Password");
                           print(e.code);
-                        }else if (e.code=="INVALID_LOGIN_CREDENTIALS")
+                        } else if (e.code == "INVALID_LOGIN_CREDENTIALS")
                           showSnackbar(context, "Error");
                         print(e.code);
                       }
-                      isloading=false;
+                      isloading = false;
                       setState(() {
 
                       });
-
+                      Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(
+                              builder: (context) {
+                                return FirebaseAuth.instance.currentUser == null
+                                    ? const LoginScreen()
+                                    : const ProfileWidget();
+                              }
+                          ), (route) => false);
                     }
                   },
                 )
@@ -102,7 +111,6 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-
 
 
   Future<void> LoginFirebase() async {

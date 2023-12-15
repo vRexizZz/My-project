@@ -4,9 +4,11 @@ import 'package:gap/gap.dart';
 
 class CategoryScreen extends StatelessWidget {
    CategoryScreen({super.key});
-double heghit = 140;
+double heghit = 170;
+
   @override
   Widget build(BuildContext context) {
+    double fontsize2 = 13;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white.withOpacity(1),
@@ -48,7 +50,7 @@ double heghit = 140;
                           "Fire \n Extinguisher",
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
-                              fontSize: 15,
+                              fontSize: 13,
                             fontFamily: "Poppins",
                             letterSpacing: 0.6
                           ),
@@ -86,7 +88,8 @@ double heghit = 140;
                           TextStyle(
                               fontFamily: "Poppins",
                               letterSpacing: 0.6,
-                              fontSize: 15, fontWeight: FontWeight.w700),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w700),
                     )
                   ],
                 )),
@@ -118,7 +121,7 @@ double heghit = 140;
                         style: TextStyle(
                             fontFamily: "Poppins",
                             letterSpacing: 0.6,
-                            fontWeight: FontWeight.w700, fontSize: 15),
+                            fontWeight: FontWeight.w700, fontSize: 13),
                         textAlign: TextAlign.center,
                       )
                     ],
@@ -145,10 +148,10 @@ double heghit = 140;
                       ),
                       const Gap(10),
                       const Text(
-                        "Fire Fighting Systems \n",
+                        "Fire Fighting Systems ",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w700),
+                            fontSize: 13, fontWeight: FontWeight.w700),
                       )
                     ],
                   ),
@@ -183,7 +186,7 @@ double heghit = 140;
                             fontFamily: "Poppins",
 
                             letterSpacing: 0.4,
-                            fontWeight: FontWeight.w700, fontSize: 15),
+                            fontWeight: FontWeight.w700, fontSize: 13),
                         textAlign: TextAlign.center,
                       )
                     ],
@@ -213,7 +216,7 @@ double heghit = 140;
                         "Fire Alarm \n ",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w700),
+                            fontSize: 13, fontWeight: FontWeight.w700),
                       )
                     ],
                   ),
@@ -236,7 +239,6 @@ double heghit = 140;
                         ),
                         child: Image.asset(
                           "assets/images/Bavaria-fire-hose-and-nozzles.png",
-                          fit: BoxFit.fill,
                           height: heghit,
                         ),
                       ),
@@ -247,7 +249,7 @@ double heghit = 140;
                         style: TextStyle(
                             fontFamily: "Poppins",
                             letterSpacing: 0.6,
-                            fontWeight: FontWeight.w700, fontSize: 15),
+                            fontWeight: FontWeight.w700, fontSize: 13),
                         textAlign: TextAlign.center,
                       )
                     ],
@@ -277,7 +279,7 @@ double heghit = 140;
                         "Accessories \n ",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w700),
+                            fontSize: 13, fontWeight: FontWeight.w700),
                       )
                     ],
                   ),

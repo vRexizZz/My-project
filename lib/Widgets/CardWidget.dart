@@ -33,7 +33,7 @@ List<ModelCategory> ListData=[
       physics: const BouncingScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio:85/205,
+            childAspectRatio:85/195,
             crossAxisSpacing: 10,
             mainAxisSpacing: 12,
           ),

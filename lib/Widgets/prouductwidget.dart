@@ -17,7 +17,7 @@ class _ProductWidgetState extends State<ProductWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 5,
+      elevation: 7,
       child: Column(
         children: [
           Container(
@@ -68,7 +68,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                         textcolor: Colors.black,
                       ),
                       const Text(
-                        "2000 EGP",
+                        "1500 EGP",
                         style: TextStyle(
                             fontFamily: "Poppins",
                             color: Colors.black54,
