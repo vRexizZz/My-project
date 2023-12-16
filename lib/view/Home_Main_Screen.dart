@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeMainScreen> {
       const HomeScreen(),
        CategoryScreen(),
       const TestFirebase(),
-      FirebaseAuth.instance.currentUser == null ?RegisterScreen() : const ProfileWidget()
+      // FirebaseAuth.instance.currentUser == null ?RegisterScreen() : const ProfileWidget()
     ];
     return Scaffold(
       body: Container(
@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeMainScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.list), label: "Category"),
           BottomNavigationBarItem(icon: Icon(Icons.shopping_cart_outlined), label: "Bag"),
 
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+          // BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
 
         ],
       ),
