@@ -1,18 +1,24 @@
 {
   "project_info": {
     "project_number": "278780970997",
+    "firebase_url": "https://bavaria-firebase-default-rtdb.firebaseio.com",
     "project_id": "bavaria-firebase",
     "storage_bucket": "bavaria-firebase.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:278780970997:android:cc8c6c7f1cf0d772ad02bc",
+        "mobilesdk_app_id": "1:278780970997:android:7be990419fb8012cad02bc",
         "android_client_info": {
-          "package_name": "com.example.bavaria"
+          "package_name": "com.example.bavaria_admin_panel"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "278780970997-bgeaf4qejqs61ee0ovgspkote6lq2g7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBUeC67iXSHfK3t0ING0wjpKXnfw_cUS1o"
@@ -20,7 +26,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "278780970997-bgeaf4qejqs61ee0ovgspkote6lq2g7c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "278780970997-3d1njsji5i5sukogaqevltpuuo410pbn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bavariaAdminPanel"
+              }
+            }
+          ]
         }
       }
     },
@@ -31,7 +49,20 @@
           "package_name": "com.example.prouductlist"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "278780970997-tj476bbb7p96kteqr0h4b7p37l7k6j38.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.prouductlist",
+            "certificate_hash": "1a28d70efc60e2474b40cd158fe6d800dbf8cc55"
+          }
+        },
+        {
+          "client_id": "278780970997-bgeaf4qejqs61ee0ovgspkote6lq2g7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBUeC67iXSHfK3t0ING0wjpKXnfw_cUS1o"
@@ -39,7 +70,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "278780970997-bgeaf4qejqs61ee0ovgspkote6lq2g7c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "278780970997-3d1njsji5i5sukogaqevltpuuo410pbn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bavariaAdminPanel"
+              }
+            }
+          ]
         }
       }
     }

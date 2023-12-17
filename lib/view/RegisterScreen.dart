@@ -1,12 +1,13 @@
 import 'package:gap/gap.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../Widgets/Screen_Register/Register.dart';
 import 'Home_Main_Screen.dart';
 
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+   RegisterScreen({super.key});
 
   static String id = "RegisterScreen";
 
@@ -15,8 +16,38 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  Future signInWithGoogle() async {
+    try {
+      // Trigger the authentication flow
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+      // Obtain the auth details from the request
+      final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+
+      // Create a new credential
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+
+      // Once signed in, return the UserCredential
+      await FirebaseAuth.instance.signInWithCredential(credential);
+
+      print('User signed in with Google successfully');
+      Center(child: CircularProgressIndicator());
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const HomeMainScreen()),
+      );
+    } catch (e) {
+      print('Error signing in with Google: $e');
+    }
+  }
   String? email;
+
   String? password;
+
   GlobalKey<FormState> formkey = GlobalKey();
 
   @override
@@ -50,19 +81,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       text: 'Continue with Google',
                       fieldColor: Colors.grey.shade300,
                       textColor: Colors.black,
+                      onTap:( ) {signInWithGoogle();
+
+                      },
                     ),
-                    Register_Screen_Widget(
-                      image: 'assets/images/apple.png',
-                      text: 'Continue with Apple',
-                      fieldColor: Colors.black,
-                      textColor: Colors.white,
-                    ),
-                    Register_Screen_Widget(
-                      image: 'assets/images/facebook (1).png',
-                      text: 'Continue with Facebook',
-                      fieldColor: const Color(0xff1877F2),
-                      textColor: Colors.white,
-                    ),
+                    // Register_Screen_Widget(
+                    //   image: 'assets/images/apple.png',
+                    //   text: 'Continue with Apple',
+                    //   fieldColor: Colors.black,
+                    //   textColor: Colors.white,
+                    // ),
+                    // Register_Screen_Widget(
+                    //   image: 'assets/images/facebook (1).png',
+                    //   text: 'Continue with Facebook',
+                    //   fieldColor: const Color(0xff1877F2),
+                    //   textColor: Colors.white,
+                    // ),
                     Container(
                       margin: const EdgeInsets.only(
                           left: 20, right: 20, top: 5, bottom: 5),
@@ -106,7 +140,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
     UserCredential userCredential = await FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email!, password: password!);
   }
+
+
 }
+
 // appBar: AppBar(
 //   flexibleSpace: Container(
 //     decoration: const BoxDecoration(

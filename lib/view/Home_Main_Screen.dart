@@ -10,6 +10,7 @@ import 'afterLoagin.dart';
 
 class HomeMainScreen extends StatefulWidget {
   const HomeMainScreen({super.key});
+  static String id ="HomeMainScreen";
 
   @override
   State<HomeMainScreen> createState() => _HomeScreenState();
@@ -17,6 +18,7 @@ class HomeMainScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeMainScreen> {
   int selectedIndexBottomNavigationBar = 0;
+
   @override
   Widget build(BuildContext context) {
 

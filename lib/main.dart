@@ -28,7 +28,8 @@ class ProductList extends StatelessWidget {
         home: RegisterScreen(),
         routes: {
           RegisterScreen.id: (context) => RegisterScreen(),
-          LoginScreen.id: (context) => LoginScreen(),
+          LoginScreen.id: (context) => const LoginScreen(),
+          HomeMainScreen.id : (context)=>const HomeMainScreen()
         },
 
       ),
