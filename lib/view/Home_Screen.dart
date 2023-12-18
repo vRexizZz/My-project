@@ -109,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           SizedBox(
             width: double.infinity,
-            height: 230,
+            height: 212,
             child: FadeIn(
               duration: const Duration(seconds: 2),
               child: PageView.builder(

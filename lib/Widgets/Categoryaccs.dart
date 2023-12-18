@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../model/Model_Fire.dart';
@@ -12,7 +11,7 @@ class CategoryState extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
           children: [
-        Container(
+        SizedBox(
           height: 100,
           width: 200,
           child: Text(data.productname,style: const TextStyle(
@@ -20,7 +19,7 @@ class CategoryState extends StatelessWidget {
             fontSize: 20
           ),),
         ),
-            Container(
+            SizedBox(
               height: 100,
               width: 200,
               child: Text(data.Dec,style: const TextStyle(
@@ -28,7 +27,7 @@ class CategoryState extends StatelessWidget {
                   fontSize: 20
               ),),
             ),
-            Container(
+            SizedBox(
               height: 100,
               width: 200,
               child: Text(data.price,style: const TextStyle(

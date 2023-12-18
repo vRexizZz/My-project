@@ -1,6 +1,7 @@
 import 'package:Bavaria_Fire_Fighting_Solution/view/Home_Main_Screen.dart';
 import 'package:Bavaria_Fire_Fighting_Solution/view/LoginScreen.dart';
 import 'package:Bavaria_Fire_Fighting_Solution/view/RegisterScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,9 +26,9 @@ class ProductList extends StatelessWidget {
       create: (context) => CartCubit(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: RegisterScreen(),
+        home:  FirebaseAuth.instance.currentUser == null ?const RegisterScreen() : const RegisterScreen(),
         routes: {
-          RegisterScreen.id: (context) => RegisterScreen(),
+          RegisterScreen.id: (context) => const RegisterScreen(),
           LoginScreen.id: (context) => const LoginScreen(),
           HomeMainScreen.id : (context)=>const HomeMainScreen()
         },
