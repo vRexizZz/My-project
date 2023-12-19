@@ -25,16 +25,19 @@ class Register_Screen_Widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 5),
+
+      margin: const EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 8),
       padding: const EdgeInsets.only(left: 0, right: 10, bottom: 0, top: 0),
       decoration: BoxDecoration(
+
+
           color: fieldColor,
           border: Border.all(width: 0.2),
-          borderRadius: BorderRadius.circular(50)),
+          borderRadius: BorderRadius.circular(8),
+      ),
       child: MaterialButton(
         highlightColor: Colors.transparent,
         splashColor: Colors.transparent,
-        padding: EdgeInsets.all(0),
         onPressed: onTap,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

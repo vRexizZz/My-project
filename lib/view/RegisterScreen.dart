@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:gap/gap.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -5,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
+import '../Widgets/Loading_widget.dart';
 import '../Widgets/Screen_Register/Register.dart';
 import 'Home_Main_Screen.dart';
 
@@ -80,40 +82,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return ModalProgressHUD(
       inAsyncCall: loading,
       blur: 1,
-      progressIndicator: Container(
-        decoration: BoxDecoration(
-            color: Colors.white,
-          borderRadius: BorderRadius.circular(10)
-        ),
-        padding: const EdgeInsets.all(10.0),
-          child: const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                CircularProgressIndicator(
-                    color: Colors.red,
-                  strokeWidth: 2,
-                ),
-                Gap(20),
-                Text("Loading..",style:
-
-                  TextStyle(
-                    color: Colors.black26,
-                    fontSize: 13,
-                    decoration: TextDecoration.none
-                  ),)
-              ],
-            ),
-          ),
-      ),
+      progressIndicator: const LoadingWidget(),
 
       child: SafeArea(
         child: Container(
           decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
-                      "assets/images/b.png"),
+                      "assets/images/33.png"),
                   fit: BoxFit.fill)),
           child: Scaffold(
       
@@ -179,7 +155,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             left: 0, right: 10, bottom: 10, top: 10),
                         decoration: BoxDecoration(
                             border: Border.all(width: 0.5),
-                            borderRadius: BorderRadius.circular(50)),
+                            borderRadius: BorderRadius.circular(8)),
                         child: GestureDetector(
                           child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -201,6 +177,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                         ),
                       ),
+                      const Gap(3),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 20.0,right: 20.0),
+                        child: Divider(
+                          thickness: 1,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 8.0,right: 8),
+                        child: Text(
+                          "By registering , you confirm that you accept our Terms of use and Privacy Policy",
+                          textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.black54
+                        ),
+                        ),
+                      )
                     ],
                   ),
                 )
