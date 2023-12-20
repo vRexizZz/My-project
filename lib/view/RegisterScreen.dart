@@ -81,7 +81,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return ModalProgressHUD(
       inAsyncCall: loading,
-      blur: 1,
+      blur: 1.5,
       progressIndicator: const LoadingWidget(),
 
       child: SafeArea(
@@ -89,7 +89,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
-                      "assets/images/33.png"),
+                      "assets/images/Screenshot 2023-12-13 170323.png"),
                   fit: BoxFit.fill)),
           child: Scaffold(
       
@@ -114,11 +114,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         fieldColor: Colors.grey.shade300,
                         textColor: Colors.black,
                         onTap:( ) async {
+                          
                           setState(() {
                             loading = true;
                           });
 
                           await signInWithGoogle();
+                          
+
                           setState(() {
                             loading = false;
                           });

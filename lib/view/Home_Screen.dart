@@ -13,7 +13,6 @@ import '../Widgets/Menu_Preventive_Fire_.dart';
 import '../Widgets/TextWidget.dart';
 import '../model/modelPhotos.dart';
 import '../Widgets/screenspage.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,6 +22,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool Loading = false;
   // late PageController _pageController;
   // // int _currentPage = 0;
   // // late Timer _timer;
@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
             "Smoke detector are the first building block for a functioning fire protection system in th home",
         categoryTitle: "Smoke Detector"),
   ];
-  bool Loading = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -91,23 +91,30 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.white10,
         appBar: AppBar(
           actions: [
-            Builder(builder: (context) {
-              return MaterialButton(
+            ElevatedButton(
                 child: const Icon(Icons.assignment_return_outlined),
-                onPressed: () async  {
-                  setState(() {
-                    Loading = true;
-                  });
-                  await FirebaseAuth.instance.signOut();
-                  Navigator.of(context).pushNamedAndRemoveUntil("RegisterScreen", (route) => false);
-                  setState(() {
-                    Loading = false;
-                  });
+                onPressed: () async {
+                  try {
+                    setState(() {
+                      Loading = true;
+                    });
 
-                  // Scaffold.of(context).openEndDrawer();
-                },
-              );
-            })
+                    await FirebaseAuth.instance.signOut();
+
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                          "RegisterScreen", (route) => false);
+
+                  } catch (e) {
+                    print('Error during sign out: $e');
+                  } finally {
+                    if (mounted) {
+                      setState(() {
+                        Loading = false;
+                      });
+                    }
+                  }
+                })
+            // }
           ],
           backgroundColor: Colors.white.withOpacity(1),
           title: Image.asset(

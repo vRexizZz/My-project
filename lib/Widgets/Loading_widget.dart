@@ -1,5 +1,4 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -11,9 +10,7 @@ class LoadingWidget extends StatelessWidget {
     return FadeIn(
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10)
-        ),
+            color: Colors.white, borderRadius: BorderRadius.circular(10)),
         child: const Padding(
           padding: EdgeInsets.all(20.0),
           child: Column(
@@ -25,13 +22,13 @@ class LoadingWidget extends StatelessWidget {
                 strokeWidth: 2,
               ),
               Gap(20),
-              Text("Loading...",style:
-
-              TextStyle(
-                  color: Colors.black38,
-                  fontSize: 13,
-                  decoration: TextDecoration.none
-              ),)
+              Text(
+                "Loading...",
+                style: TextStyle(
+                    color: Colors.black38,
+                    fontSize: 13,
+                    decoration: TextDecoration.none),
+              )
             ],
           ),
         ),
