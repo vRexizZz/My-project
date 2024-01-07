@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../model/Offers_Model.dart';
+import '../../model/Offers_Model.dart';
 import 'Offers_Widget.dart';
 
 class GridViewOffers extends StatelessWidget {

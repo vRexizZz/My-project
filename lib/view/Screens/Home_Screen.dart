@@ -6,12 +6,12 @@ import 'package:gap/gap.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../model/modelPhotos.dart';
 import '../Widgets/GridView_offers.dart';
 import '../Widgets/ListView_Service_Menu.dart';
 import '../Widgets/Loading_widget.dart';
 import '../Widgets/Menu_Preventive_Fire_.dart';
 import '../Widgets/TextWidget.dart';
-import '../model/modelPhotos.dart';
 import '../Widgets/screenspage.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -84,6 +84,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var height =MediaQuery.of(context).size.height;
+    var width =MediaQuery.of(context).size.width;
     return ModalProgressHUD(
       progressIndicator: const LoadingWidget(),
       inAsyncCall: Loading,
@@ -230,7 +232,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 450, child: ListViewServiceMenu()),
+            SizedBox(
+                height: height *0.6,
+                child: ListViewServiceMenu()),
             const Gap(20),
             Image.asset(
               "assets/images/bavaria_slogan_en.jpg",

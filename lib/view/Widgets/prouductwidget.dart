@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/Model category.dart';
+import '../../model/Model category.dart';
 import 'Buttonwidget.dart';
 import 'TextWidget.dart';
 

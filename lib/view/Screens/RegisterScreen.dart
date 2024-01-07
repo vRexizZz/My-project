@@ -5,10 +5,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-
+import 'Home_Main_Screen.dart';
 import '../Widgets/Loading_widget.dart';
 import '../Widgets/Screen_Register/Register.dart';
-import 'Home_Main_Screen.dart';
 
 class RegisterScreen extends StatefulWidget {
     const RegisterScreen({super.key});

@@ -1,11 +1,11 @@
-import 'package:Bavaria_Fire_Fighting_Solution/view/prouductlist%20screen.dart';
+import 'package:Bavaria_Fire_Fighting_Solution/view/Screens/prouductlist%20screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../Widgets/testfirebase.dart';
 import 'Category_Screen.dart';
 import 'Home_Screen.dart';
 import 'RegisterScreen.dart';
+import '../Widgets/testfirebase.dart';
 import 'afterLoagin.dart';
 
 class HomeMainScreen extends StatefulWidget {
@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeMainScreen> {
       const HomeScreen(),
        CategoryScreen(),
       const TestFirebase(),
-      // FirebaseAuth.instance.currentUser == null ?RegisterScreen() : const ProfileWidget()
+      FirebaseAuth.instance.currentUser == null ? CategoryScreen() : const ProfileWidget()
     ];
     return Scaffold(
       body: Container(
@@ -47,10 +47,10 @@ class _HomeScreenState extends State<HomeMainScreen> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: "Home"),
 
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: "Category"),
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: "Menu"),
           BottomNavigationBarItem(icon: Icon(Icons.shopping_cart_outlined), label: "Bag"),
 
-          // BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
 
         ],
       ),

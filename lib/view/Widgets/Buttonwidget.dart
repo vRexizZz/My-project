@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../manager/cart_cunbit_cubit.dart';
+import '../../manager/cart_cunbit_cubit.dart';
 
 class Buttonaddtobag extends StatelessWidget {
   const Buttonaddtobag({super.key});

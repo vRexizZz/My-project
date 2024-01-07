@@ -1,8 +1,10 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../view/Home_Main_Screen.dart';
-import '../view/RegisterScreen.dart';
+
+import '../Screens/Home_Main_Screen.dart';
+import '../Screens/RegisterScreen.dart';
+
 
 class CheckUser extends StatefulWidget {
   const CheckUser({super.key});

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import '../model/modelPhotos.dart';
+
+import '../../model/modelPhotos.dart';
 
 class Screenone extends StatelessWidget {
-   Screenone({super.key,required this.data});
+   const Screenone({super.key,required this.data});
    final PageViewModel data ;
 
   @override

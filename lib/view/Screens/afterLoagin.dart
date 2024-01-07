@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'Home_Main_Screen.dart';
+import 'RegisterScreen.dart';
 
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({super.key});
@@ -30,17 +31,17 @@ class ProfileWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              Gap(10),
-              Container(
+              const Gap(10),
+              SizedBox(
                 width: double.infinity,
                 height: 50,
                 child: MaterialButton(
                     onPressed: () {},
-                    child: Align(
+                    child: const Align(
                         alignment: AlignmentDirectional.centerStart,
-                        child: const Text("Settings"))),
+                        child: Text("Settings"))),
               ),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 height: 50,
                 child: MaterialButton(
@@ -48,12 +49,12 @@ class ProfileWidget extends StatelessWidget {
                       await FirebaseAuth.instance.signOut();
                       Navigator.of(context).pushAndRemoveUntil(
                           MaterialPageRoute(
-                              builder: (context) => const HomeMainScreen()),
+                              builder: (context) => const RegisterScreen()),
                           (route) => false);
                     },
-                    child: Align(
+                    child: const Align(
                         alignment: AlignmentDirectional.centerStart,
-                        child: const Text("Logout"))),
+                        child: Text("Logout"))),
               )
             ],
           ),

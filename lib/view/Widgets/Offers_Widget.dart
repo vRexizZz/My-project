@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/Offers_Model.dart';
+import '../../model/Offers_Model.dart';
 import 'TextWidget.dart';
 
 class OffersWidget extends StatelessWidget {

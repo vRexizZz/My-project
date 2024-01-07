@@ -1,4 +1,4 @@
-import 'package:Bavaria_Fire_Fighting_Solution/view/prouductlist%20screen.dart';
+import 'package:Bavaria_Fire_Fighting_Solution/view/Screens/prouductlist%20screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

@@ -1,7 +1,8 @@
-import 'package:Bavaria_Fire_Fighting_Solution/Widgets/prouductwidget.dart';
+import 'package:Bavaria_Fire_Fighting_Solution/view/Widgets/prouductwidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../model/Model category.dart';
+
+import '../../model/Model category.dart';
 
 
 class CardWidget extends StatelessWidget {
