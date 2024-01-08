@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeMainScreen> {
     List<Widget> screens =[
       const HomeScreen(),
        CategoryScreen(),
-      const TestFirebase(),
+      CategoryScreen(),
       FirebaseAuth.instance.currentUser == null ? CategoryScreen() : const ProfileWidget()
     ];
     return Scaffold(
