@@ -28,20 +28,13 @@ class GridViewOffers extends StatelessWidget {
             'BAVARIA Fantasia wall Fire Cabinet with flat hose or reinforced',
         Price: '1299',
         oldprice: '1599'),
-    OffersModel(
-        image: 'assets/images/Tarus.png',
-        headtext: 'TAURUS DOUBLE',
-        descrption:
-            'BAVARIA Fantasia wall Fire Cabinet with flat hose or reinforced',
-        Price: '1299',
-        oldprice: '1599'),
   ];
 
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.width;
 
-    double gridHeightPercentage = 67.8 / 210;
+    double gridHeightPercentage = 67.8 / 180;
 
     double gridHeight = screenHeight / gridHeightPercentage;
     return SizedBox(
@@ -51,7 +44,7 @@ class GridViewOffers extends StatelessWidget {
         itemCount: menu.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 1,
-          childAspectRatio: 110 / 83,
+          childAspectRatio: 108 / 95,
           mainAxisSpacing:10,
         ),
         itemBuilder: (BuildContext context, int index) {

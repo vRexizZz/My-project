@@ -17,7 +17,7 @@ class MenuProducts extends StatelessWidget {
     var height = MediaQuery.of(context).size.height * .091;
     var width = MediaQuery.of(context).size.width * .35;
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(5.0),
       child: GestureDetector(
         onTap: () {
           Navigator.push(
@@ -66,7 +66,7 @@ class MenuProducts extends StatelessWidget {
                 child: Text(
                   text,
                   style: const TextStyle(
-                      fontSize: 16,
+                      fontSize: 15.5,
                       letterSpacing: 0.4,
                       fontFamily: "Poppins",
                       color: Colors.white),

@@ -18,74 +18,73 @@ class CategoryScreen extends StatelessWidget {
           "assets/images/Bavaria-Egypt-Egypt-29995-1612179858-og-removebg-preview.png",
           width: 150,
         ),
+        actions: [
+          IconButton(onPressed: (){}, icon: const Icon(Icons.search))
+        ],
       ),
       body: Center(
         child: ListView(
           children: [
+            // SizedBox(
+            //   height: hegiht*.08,
+            //   child: Padding(
+            //     padding: const EdgeInsets.all(8.0),
+            //     child: Container(
+            //       decoration: BoxDecoration(
+            //           borderRadius: BorderRadius.circular(25),
+            //           color: Colors.white,
+            //           border: Border.all(width: 0.2,
+            //               color: Colors.black45)
+            //       ),
+            //
+            //       child: const TextField(
+            //         decoration: InputDecoration(
+            //             border: InputBorder.none,
+            //             prefixIcon: Icon(Icons.search),
+            //             hintText: "Search",
+            //             hintStyle: TextStyle(fontSize: 15)),
+            //       ),
+            //     ),
+            //   ),
+            // ),
             Stack(
               children: [
 
                 SizedBox(
                   width: double.infinity,
-                  height: hegiht * .25,
+                  height: hegiht * .18,
                   child: Image.asset(
-                    "assets/images/Bavaria-Ziegler22020248341.png",
+                    "assets/images/Bavaria-Christmas-website-banner20231223105626.jpg",
                     fit: BoxFit.fill,
                   ),
                 ),
                 Center(
                   child: Container(
                     width: double.infinity,
-                    height: hegiht * .22,
+                    height: hegiht * .18,
                     color: Colors.black26.withOpacity(0.25),
                   ),
                 ),
 
-                Center(
-                    child: Container(
-                      height: hegiht*.25,
-                      alignment: AlignmentDirectional.center,
-                      child: const Text(
-                          "Bavaria Group Signed a Joint Venture\n Agreement  with Ziegler Group to Establish \n Bavaria Ziegler LLC"
-                      ,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: "Poppins",
+                 Center(
+                  child: Container(
+                    alignment: AlignmentDirectional.center,
+                    color: Colors.black.withOpacity(0.2),
+                    height: hegiht*0.18,
+                    child: const Text(
+                        "Products",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: "Poppins",
 
-                          color: Colors.white,
-                          fontSize: 15
-                        ),
+                        color: Colors.white,
+                        fontSize: 25
                       ),
                     ),
+                  ),
                 ),
               ],
             ),
-            const Gap(10),
-            SizedBox(
-              height: hegiht*.08,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: Colors.white,
-                    border: Border.all(width: 0.2,
-                    color: Colors.black45)
-                  ),
-
-                  child: const TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                        prefixIcon: Icon(Icons.search),
-                        hintText: "Search",
-                        hintStyle: TextStyle(fontSize: 15)),
-                  ),
-                ),
-              ),
-            ),
-
-            const Gap(00),
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(

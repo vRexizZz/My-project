@@ -19,7 +19,7 @@ class _ProductDetailsState extends State<ProductDetails> {
     dynamic price = int.parse(widget.data.price) + 700;
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    String quantityfixed = "5";
+    String quantityfixed = "1";
     int quantity = int.parse(quantityfixed);
 
     return Scaffold(
@@ -125,7 +125,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      quantity=quantity--;
+                                      quantity = quantity--;
                                     });
                                   },
                                   child: const Text(
@@ -133,8 +133,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                                     style: TextStyle(fontSize: 25),
                                   ),
                                 ),
-                                 Text(
-                                   "$quantity",
+                                Text(
+                                  "$quantity",
                                   style: const TextStyle(fontSize: 17),
                                 ),
                                 GestureDetector(
@@ -142,8 +142,6 @@ class _ProductDetailsState extends State<ProductDetails> {
                                       setState(() {
                                         quantity++;
                                       });
-
-
                                     },
                                     child: const Text(
                                       "+",
@@ -155,18 +153,49 @@ class _ProductDetailsState extends State<ProductDetails> {
                         ],
                       ),
                       const Gap(15),
-                      const Gap(15),
-                      ProductItem(
-                        title: ' More Info',
-                        details: widget.data.Dec,
+                      Container(
+                        padding: const EdgeInsetsDirectional.all(16),
+                        decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(10)),
+                        alignment: AlignmentDirectional.topStart,
+                        child:  Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                                "Description",
+                              style: TextStyle(
+                                fontSize: 15,
+
+                              ),
+                            ),
+                            Gap(10),
+                            Text(widget.data.Dec,
+                            maxLines: 6,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: 13,
+                              fontFamily:
+                                "Poppins"
+                            ),)
+                          ],
+                        ),
                       ),
-                      const Gap(150),
+                      // ProductItem(
+                      //   title: 'Description',
+                      //   details: widget.data.Dec,
+                      // ),
+                      const Gap(0),
                     ],
                   ),
                 ),
               ],
             ),
           ),
+          Container(
+              height: height * 0.1,
+              color: Colors.black.withOpacity(0.7),
+              child: Image.asset("assets/images/certifactions-img.png"))
         ],
       ),
       floatingActionButton: Padding(

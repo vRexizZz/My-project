@@ -16,26 +16,32 @@ class _ProductItemState extends State<ProductItem> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: ExpansionTile(
-        title: Text(
-            widget.title),
-        onExpansionChanged: (expanded) {
-          setState(() {
-            isExpanded = expanded;
-          });
-        },
-        tilePadding: const EdgeInsets.symmetric(horizontal: 8.0),
-        expandedCrossAxisAlignment: CrossAxisAlignment.start,
-        collapsedTextColor: Colors.blue,
-        textColor: Colors.blue,
-        iconColor: isExpanded ? Colors.black : Colors.blue,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(widget.details),
-          ),
-        ], // لون السهم
+    return Container(
+      color: Colors.white,
+      child: Card(
+        color: Colors.white,
+        elevation: 3,
+        child: ExpansionTile(
+          backgroundColor: Colors.white,
+          title: Text(
+              widget.title),
+          onExpansionChanged: (expanded) {
+            setState(() {
+              isExpanded = expanded;
+            });
+          },
+          tilePadding: const EdgeInsets.symmetric(horizontal: 8.0),
+          expandedCrossAxisAlignment: CrossAxisAlignment.start,
+          collapsedTextColor: Colors.black54,
+          textColor: Colors.blue,
+          iconColor: isExpanded ? Colors.black : Colors.blue,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(widget.details),
+            ),
+          ], // لون السهم
+        ),
       ),
     );
   }

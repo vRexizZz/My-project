@@ -13,58 +13,65 @@ class ServiceMenuWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
-        color: Colors.grey.shade50,
+        color: Colors.white,
         elevation: 2,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Image.asset(
-              data.photo,
-              fit: BoxFit.fill,
-              height: 200,
-              width: double.infinity,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Container(
-                alignment: AlignmentDirectional.topStart,
-                child: TextWidget(
-                  type: data.headText,
-                  textcolor: Colors.red,
-                  fontSize: 18,
-                ),
+        child: Container(
+
+          decoration: BoxDecoration(
+              color: Colors.white,
+            borderRadius: BorderRadius.circular(10)
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset(
+                data.photo,
+                fit: BoxFit.fill,
+                height: 200,
+                width: double.infinity,
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10),
-              child: Text(
-                data.description,
-                maxLines: 4,
-                style: TextStyle(
-                  color: Colors.grey.shade600,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ),
-            Center(
-              child: SizedBox(
-                width: 200,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.red),
-                    elevation: MaterialStateProperty.all(5),
-                  ),
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  onPressed: () {},
-                  child: Text(
-                    data.textButton,
-                    style: const TextStyle(color: Colors.white),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Container(
+                  alignment: AlignmentDirectional.topStart,
+                  child: TextWidget(
+                    type: data.headText,
+                    textcolor: Colors.red,
+                    fontSize: 18,
                   ),
                 ),
               ),
-            ),
-            const Gap(15),
-          ],
+              Padding(
+                padding: const EdgeInsets.only(left: 10, right: 10),
+                child: Text(
+                  data.description,
+                  maxLines: 4,
+                  style: TextStyle(
+                    color: Colors.grey.shade600,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ),
+              Center(
+                child: SizedBox(
+                  width: 200,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.red),
+                      elevation: MaterialStateProperty.all(5),
+                    ),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    onPressed: () {},
+                    child: Text(
+                      data.textButton,
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+              const Gap(15),
+            ],
+          ),
         ),
       ),
     );

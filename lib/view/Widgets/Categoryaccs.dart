@@ -36,6 +36,17 @@ class CategoryState extends StatelessWidget {
                 ),
               ),
               const Gap(15),
+              Row(
+                children: [
+                  Icon(Icons.star,size: 16,color: Colors.yellow.shade600,),
+                  Icon(Icons.star,size: 16,color: Colors.yellow.shade600,),
+                  Icon(Icons.star,size: 16,color: Colors.yellow.shade600,),
+                  Icon(Icons.star,size: 16,color: Colors.yellow.shade600,),
+                  Icon(Icons.star,size: 16,color: Colors.yellow.shade300,),
+                  Text("(10)",style: TextStyle(fontSize: 9),)
+                ],
+              ),
+              const Gap(10),
               Text(
                 data.productname,
                 maxLines: 2,

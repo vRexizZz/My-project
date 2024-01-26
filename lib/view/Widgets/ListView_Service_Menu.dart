@@ -40,7 +40,7 @@ class ListViewServiceMenu extends StatelessWidget {
           data: menu[index],
         );
 
-      }, gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      }, gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 1,
       mainAxisSpacing: 0,
       childAspectRatio: 1.4
