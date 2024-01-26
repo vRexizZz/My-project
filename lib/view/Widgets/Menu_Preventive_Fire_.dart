@@ -9,7 +9,7 @@ class CarouselSliderMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     var hegith = MediaQuery.of(context).size.height;
     return SizedBox(
-      height:hegith*0.25,
+      height:hegith*0.20,
       child: CarouselSlider(
         items: [
 

@@ -101,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           elevation: 3,
         ),
-        endDrawer: Drawer(
+        endDrawer: const Drawer(
           width: 250,
           elevation: 0,
         ),

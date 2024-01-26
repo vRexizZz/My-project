@@ -41,7 +41,7 @@ class GridViewOffers extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.width;
 
-    double gridHeightPercentage = 85 / 135;
+    double gridHeightPercentage = 67.8 / 210;
 
     double gridHeight = screenHeight / gridHeightPercentage;
     return SizedBox(
@@ -50,10 +50,9 @@ class GridViewOffers extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         itemCount: menu.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 115 / 190,
-          mainAxisSpacing: 10,
-          crossAxisSpacing: 15
+          crossAxisCount: 1,
+          childAspectRatio: 110 / 83,
+          mainAxisSpacing:10,
         ),
         itemBuilder: (BuildContext context, int index) {
           return OffersWidget(

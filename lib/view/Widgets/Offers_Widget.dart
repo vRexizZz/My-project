@@ -9,9 +9,10 @@ class OffersWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var hegiht = MediaQuery.of(context).size.height;
     return Card(
       elevation: 4,
-      color: Colors.white,
+      color: Colors.white.withOpacity(1),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -19,7 +20,8 @@ class OffersWidget extends StatelessWidget {
           children: [
             Image.asset(
               data.image,
-              height: 135,
+              fit: BoxFit.cover,
+              height: hegiht*.195,
             ),
             Align(
               alignment: AlignmentDirectional.topStart,
@@ -38,7 +40,7 @@ class OffersWidget extends StatelessWidget {
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                fontSize: 13
+                fontSize: 13.5
               ),
 
             ),
