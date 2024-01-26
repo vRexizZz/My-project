@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../model/Model_Fire.dart';
 import '../../core/network_layer/Firebase_Service.dart';
 import 'Categoryaccs.dart';
+import 'Loading_widget.dart';
 
 class TestFirebase extends StatelessWidget {
    TestFirebase({super.key,required this.collectionname});
@@ -58,7 +59,7 @@ class TestFirebase extends StatelessWidget {
           );
         } else {
           return const Center(
-            child: CircularProgressIndicator(color: Colors.red,),
+            child: LoadingWidget(),
           );
         }
       },

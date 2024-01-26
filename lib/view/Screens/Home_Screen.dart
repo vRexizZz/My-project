@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
         textButton: "Shop",
         image: "assets/images/Screenshot 2023-11-24 214224.png",
         description:
-            "Dicover our diverse selction of fire extinguishers and find the right product for your needs ",
+            "Discover our diverse selection of fire extinguishers and find the right product for your needs ",
         categoryTitle: "Fire Extinguisher"),
     PageViewModel(
         textButton: "Quality",
@@ -92,32 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         backgroundColor: Colors.white10,
         appBar: AppBar(
-          actions: [
-            ElevatedButton(
-                child: const Icon(Icons.assignment_return_outlined),
-                onPressed: () async {
-                  try {
-                    setState(() {
-                      Loading = true;
-                    });
-
-                    await FirebaseAuth.instance.signOut();
-
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          "RegisterScreen", (route) => false);
-
-                  } catch (e) {
-                    print('Error during sign out: $e');
-                  } finally {
-                    if (mounted) {
-                      setState(() {
-                        Loading = false;
-                      });
-                    }
-                  }
-                })
-            // }
-          ],
+          
           backgroundColor: Colors.white.withOpacity(1),
           title: Image.asset(
             "assets/images/Bavaria-Egypt-Egypt-29995-1612179858-og-removebg-preview.png",
@@ -134,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             SizedBox(
               width: double.infinity,
-              height: 212,
+              height: height*.27,
               child: FadeIn(
                 duration: const Duration(seconds: 2),
                 child: PageView.builder(
@@ -205,7 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextWidget(
-                    type: "Anniversary offers",
+                    type: "offers",
                     fontSize: 18,
                   ),
                   GestureDetector(
